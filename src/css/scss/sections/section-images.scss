@@ -1,0 +1,42 @@
+@import '../variables.scss';
+
+.section-images {
+  margin-bottom: 50px;
+  padding: 0;
+
+  > .list-images {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    @include media("xs") {
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+    > .item {
+      > .picture {
+        display: block;
+        padding-bottom: 100%;
+        position: relative;
+
+        &:after {
+          background-color: rgba($black, .1);
+          content: "";
+          height: 100%;
+          width: 100%;
+          left: 0;
+          position: absolute;
+          top: 0;
+        }
+
+        > img {
+          height: 100%;
+          width: 100%;
+          left: 0;
+          object-fit: cover;
+          position: absolute;
+          top: 0;
+        }
+      }
+    }
+  }
+}

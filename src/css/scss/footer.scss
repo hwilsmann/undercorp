@@ -1,0 +1,75 @@
+@import 'variables';
+
+.footer {
+  background-color: $black;
+  color: $white;
+  padding: 25px 0;
+
+  > .container {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+
+    > .row {
+      align-items: center;
+      display: flex;
+      gap: 25px;
+      justify-content: space-between;
+
+      @include media("xs") {
+        flex-direction: column;
+      }
+
+      &:last-of-type {
+        justify-content: center;
+        text-align: center;
+      }
+  
+      > .right {
+        > .list-nav {
+          align-items: center;
+          display: flex;
+          flex-wrap: wrap;
+          gap: 25px;
+
+          @include media("xs") {
+            justify-content: center;
+          }
+  
+          > .item {
+            align-items: center;
+            display: flex;
+            gap: 25px;
+
+            &:hover {
+              > .anchor {
+                &:after {
+                  width: 100%;
+                }
+              }
+            }
+  
+            &:not(:last-of-type) {
+              &:after {
+                content: "|";
+              }
+            }
+
+            > .anchor {
+              display: flex;
+              flex-direction: column;
+
+              &:after {
+                background-color: $white;
+                content: "";
+                height: 2px;
+                width: 0;
+                transition: width $transition;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

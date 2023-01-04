@@ -1,0 +1,85 @@
+@import '../variables.scss';
+
+.section-contact {
+  > .container {
+    max-width: 1167px;
+
+    > .list-contact {
+      display: grid;
+      grid-gap: 50px;
+      grid-template-columns: repeat(auto-fill, minmax(558px, 2fr));
+
+      @include media("xs") {
+        grid-template-columns: repeat(1, 1fr);
+      }
+  
+      > .item {
+        display: flex;
+
+        &:hover {
+          > .anchor {
+            background-color: $blue;
+            color: $white;
+          }
+
+          .--btn {
+            border-color: $white;
+            color: $white;
+
+            &:hover {
+              background-color: $white;
+              color: $dark-gray;
+            }
+          }
+        }
+  
+        > .anchor {
+          border-radius: $radius;
+          box-shadow: $box-shadow;
+          width: 100%;
+          padding: 50px;
+          transition: background-color $transition, color $transition;
+
+          @include media("xs") {
+            padding: 25px;
+          }
+
+          > .row {
+            align-items: center;
+            display: flex;
+            gap: 8px;
+            justify-content: space-between;
+
+            @include media("xs") {
+              flex-direction: column;
+              gap: 16px;
+              text-align: center;
+            }
+
+            > .left {
+              display: flex;
+              flex-direction: column;
+              gap: 8px;
+
+              @include media("xs") {
+                gap: 16px;
+                width: 100%;
+              }
+
+              > .description {
+                display: flex;
+                flex-direction: column;
+              }
+            }
+
+            > .right {
+              @include media("xs") {
+                width: 100%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

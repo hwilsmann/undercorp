@@ -1,0 +1,117 @@
+@import '../variables.scss';
+
+.section-about {
+  background-color: $light-gray;
+  margin: 100px 0;
+  padding: 0;
+
+  @include media("xs") {
+    margin: 0;
+    padding: 50px 0;
+  }
+
+  &.--about {
+    background-color: $white;
+    margin: 0;
+    padding: 200px 0;
+
+    @include media("xs") {
+      padding: 50px 0;
+    }
+  }
+
+  &.--reverse {
+    .row {
+      flex-direction: row-reverse;
+
+      > .right {
+        > .pictures {
+          align-items: flex-end;
+          padding-left: 0;
+          padding-right: 100px;
+
+          > .picture {
+            &.--bottom {
+              margin: -100px -100px 0 0;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .row {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 100px;
+
+    @include media("xs") {
+      flex-direction: column;
+      gap: 50px;
+    }
+
+    > .left {
+      width: 586px;
+
+      @include media("xs") {
+        width: 100%;
+      }
+
+      > .description {
+        align-items: flex-start;
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        text-align: left;
+      }
+    }
+
+    > .right {
+      width: calc(100% - 586px - 100px);
+
+      @include media("xs") {
+        width: 100%;
+      }
+
+      > .pictures {
+        align-items: flex-start;
+        display: flex;
+        flex-direction: column;
+        margin: -100px 0;
+        padding-left: 100px;
+
+        @include media("xs") {
+          margin: 0;
+        }
+
+        > .picture {
+          border-radius: $radius;
+          box-shadow: $box-shadow;
+          width: 100%;
+          overflow: hidden;
+          position: relative;
+
+          &:after {
+            background-color: rgba($black, .1);
+            content: "";
+            height: 100%;
+            width: 100%;
+            left: 0;
+            position: absolute;
+            top: 0;
+          }
+
+          &.--bottom {
+            width: calc(50% + 100px);
+            margin: -100px 0 0 -100px;
+          }
+
+          > img {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+@import '../variables.scss';
+
+.section-services {
+  > .container {
+    max-width: 510px;
+
+    > .row {
+      > .description {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        text-align: center;
+      }
+    }
+  }
+}

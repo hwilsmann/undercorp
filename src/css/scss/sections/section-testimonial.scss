@@ -1,0 +1,72 @@
+@import '../variables.scss';
+
+.section-testimonial {
+  > .container {
+    max-width: 1167px;
+
+    > .list-testimonial {
+      align-items: flex-start;
+      display: flex;
+      gap: 50px;
+      justify-content: center;
+
+      @include media("xs") {
+        flex-direction: column;
+      }
+  
+      > .item {
+        border-radius: $radius;
+        box-shadow: $box-shadow;
+        display: flex;
+        width: 100%;
+        padding: 50px;
+
+        @include media("xs") {
+          padding: 25px;
+        }
+  
+        > .row {
+          align-items: center;
+          display: flex;
+          flex-direction: column;
+          gap: 25px;
+          text-align: center;
+
+          > .list-star {
+            align-items: center;
+            display: flex;
+            gap: 8px;
+
+            > .item {
+              display: flex;
+
+              &.--like {
+                > .icon {
+                  > svg {
+                    fill: $blue;
+                  }
+                }
+              }
+            }
+          }
+  
+          > .picture {
+            border-radius: 50%;
+            overflow: hidden;
+            position: relative;
+  
+            &:after {
+              background-color: rgba($black, .1);
+              content: "";
+              height: 100%;
+              width: 100%;
+              left: 0;
+              position: absolute;
+              top: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}

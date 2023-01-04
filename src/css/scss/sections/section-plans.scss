@@ -1,0 +1,139 @@
+@import '../variables.scss';
+
+.section-plans {
+  padding-top: calc(100px + calc(95px / 2));
+
+  @include media("xs") {
+    padding-top: 50px;
+  }
+
+  > .container {
+    max-width: 1167px;
+
+    > .list-plans {
+      align-items: flex-start;
+      display: flex;
+      gap: 50px;
+      justify-content: center;
+
+      @include media("xs") {
+        flex-direction: column;
+        gap: 25px;
+      }
+  
+      > .item {
+        display: flex;
+        width: 100%;
+        position: relative;
+  
+        &.--most-signed {
+          @include media("xs") {
+            margin-top: calc(84px / 2);
+          }
+
+          > .anchor {
+            > .row {
+              > .top {
+                background: linear-gradient(0deg, $purple -12.8%, $pink 161.03%);
+              }
+  
+              > .bottom {
+                > .quantity {
+                  color: $purple;
+                }
+              }
+            }
+          }
+        }
+  
+        > .icon {
+          bottom: calc(100% - 84px / 2);
+          left: calc(100% - 84px / 2);
+          position: absolute;
+          transform: rotate(15deg);
+          z-index: 1;
+
+          @include media("xs") {
+            left: auto;
+            right: 0;
+          }
+        }
+  
+        > .anchor {
+          border-radius: $radius;
+          box-shadow: $box-shadow;
+          width: 100%;
+          overflow: hidden;
+  
+          > .row {
+            display: flex;
+            flex-direction: column;
+  
+            > .top {
+              background: linear-gradient(180deg, $dark-blue -62.3%, $blue 142.06%);
+              color: $white;
+              display: flex;
+              justify-content: center;
+              padding: 25px;
+  
+              > .plan {
+                align-items: center;
+                display: flex;
+                flex-direction: column;
+                line-height: 1.2;
+  
+                > .name {
+                  font-size: 28px;
+                }
+              }
+            }
+    
+            > .bottom {
+              align-items: center;
+              background-color: $white;
+              display: flex;
+              flex-direction: column;
+              gap: 25px;
+              padding: 25px;
+  
+              > .quantity {
+                color: $blue;
+                font-size: 38px;
+                line-height: 1.2;
+              }
+  
+              > .list-options {
+                align-items: flex-start;
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+  
+                > .item {
+                  align-items: center;
+                  display: flex;
+                  gap: 8px;
+                }
+              }
+  
+              > .price {
+                display: flex;
+                flex-direction: column;
+                line-height: 1.2;
+                text-align: left;
+  
+                > .value {
+                  font-size: 28px;
+                }
+  
+                > .month {
+                  display: flex;
+                  justify-content: flex-end;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

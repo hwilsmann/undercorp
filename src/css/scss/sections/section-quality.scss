@@ -1,0 +1,48 @@
+@import '../variables.scss';
+
+.section-quality {
+  background-color: $light-gray;
+
+  > .container {
+    > .row {
+      align-items: center;
+      display: flex;
+      gap: 100px;
+
+      @include media("xs") {
+        flex-direction: column;
+        gap: 50px;
+      }
+  
+      > .left {
+        width: 100%;
+  
+        > .description {
+          align-items: flex-start;
+          display: flex;
+          flex-direction: column;
+          gap: 25px;
+          text-align: left;
+        }
+      }
+  
+      > .right {
+        width: 100%;
+  
+        > .list-quality {
+          display: grid;
+          grid-gap: 25px;
+          grid-template-columns: repeat(2, 1fr);
+
+          > .item {
+            > .row {
+              align-items: center;
+              display: flex;
+              gap: 16px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
